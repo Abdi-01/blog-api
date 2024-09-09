@@ -18,6 +18,12 @@ export class ArticleController {
 
   async getArticle(req: Request, res: Response) {
     try {
+      const article = await prisma.article.findMany();
+      res.status(200).send({
+        rc: 200,
+        success: true,
+        result: article,
+      });
     } catch (error) {
       console.log(error);
     }
