@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc && tsc-alias && npx prisma generate && cp -rv public dist/public && cp -rv src/views dist/src/views",
     "test": "jest --silent",
-    "dev": "nodemon"
+    "dev": "node",
+    "start": "node"
   },
   "keywords": [],
   "author": "",
