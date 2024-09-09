@@ -35,6 +35,12 @@ class ArticleController {
     getArticle(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
+                const article = yield prisma_1.default.article.findMany();
+                res.status(200).send({
+                    rc: 200,
+                    success: true,
+                    result: article,
+                });
             }
             catch (error) {
                 console.log(error);
