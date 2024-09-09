@@ -32,7 +32,7 @@ class App {
     const authRouter = new AuthRouter();
     const profileRouter = new ProfileRouter();
     this.app.get("/", (request: Request, response: Response) => {
-      return response.status(200).send("PRISMA API");
+      return response.status(200).send("PRISMA API TEST");
     });
 
     this.app.use("/articles", articleRouter.getRouter());
