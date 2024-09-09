@@ -21,7 +21,7 @@ const article_router_1 = require("./routers/article.router");
 const auth_router_1 = require("./routers/auth.router");
 const profile_router_1 = require("./routers/profile.router");
 const path_1 = require("path");
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 class App {
     constructor() {
         this.app = (0, express_1.default)();
@@ -39,8 +39,8 @@ class App {
         const articleRouter = new article_router_1.ArticleRouter();
         const authRouter = new auth_router_1.AuthRouter();
         const profileRouter = new profile_router_1.ProfileRouter();
-        this.app.get("/api", (request, response) => {
-            return response.status(200).send("PRISMA API");
+        this.app.get("/", (request, response) => {
+            return response.status(200).send("PRISMA API TEST");
         });
         this.app.use("/articles", articleRouter.getRouter());
         this.app.use("/auth", authRouter.getRouter());
