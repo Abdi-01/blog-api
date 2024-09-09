@@ -8,7 +8,7 @@ import { AuthRouter } from "./routers/auth.router";
 import { ProfileRouter } from "./routers/profile.router";
 import { join } from "path";
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 class App {
   readonly app: Express;

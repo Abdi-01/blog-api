@@ -5,10 +5,16 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc && tsc-alias && npx prisma generate && cp -rv public dist/public && cp -rv src/views dist/src/views",
-    "test": "jest --silent",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist",
     "start": "nodemon src/index.ts"
   },
   "keywords": [],
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
