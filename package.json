@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc && tsc-alias && npx prisma generate && cp -rv public dist/public && cp -rv src/views dist/src/views",
     "test": "jest --silent",
-    "dev": "node",
-    "start": "node"
+    "dev": "nodemon",
+    "start": "nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +36,7 @@
     "@types/node": "^20.12.7",
     "@types/nodemailer": "^6.4.14",
     "@types/supertest": "^6.0.2",
+    "nodemon": "^3.1.4",
     "prisma": "^5.12.1",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.10"
